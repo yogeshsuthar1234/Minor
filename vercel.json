@@ -5,19 +5,20 @@
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "client/dist" 
+        "distDir": "build"
       }
-    },
-    {
-      "src": "server/index.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "client/dist/$1"
+      "dest": "client/build/$1"
     }
   ],
-  "buildCommand": "npm install --prefix client && npm run build --prefix client" 
+  "functions": {
+    "server/**/*.py": {
+      "runtime": "python3.11"
+    }
+  },
+  "outputDirectory": "client/build"
 }
