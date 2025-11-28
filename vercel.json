@@ -9,16 +9,11 @@
       }
     }
   ],
+  "outputDirectory": "client/build",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "client/build/$1"
+      "dest": "/client/build/$1"
     }
-  ],
-  "functions": {
-    "server/**/*.py": {
-      "runtime": "python3.11"
-    }
-  },
-  "outputDirectory": "client/build"
+  ]
 }
