@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const router = express.Router();
 
 // Create connection to traffic_violation_db
-const trafficViolationDB = mongoose.createConnection("mongodb+srv://bsshah161104_db_user:bhavya1611@cluster0.4elsmuu.mongodb.net/traffic_violation_db");
+const trafficViolationDB = mongoose.createConnection(process.env.MONGO);
 
 // Violation model (existing collection)
 const violationSchema = new mongoose.Schema({}, { strict: false });

@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 });
 
 // Connect to main database (for users)
-const mainDBUri = process.env.MONGO_URI || "mongodb+srv://bsshah161104_db_user:bhavya1611@cluster0.4elsmuu.mongodb.net/test";
+const mainDBUri = process.env.MONGO_URI ;
 mongoose.connect(mainDBUri)
   .then(() => {
     console.log("✅ Main MongoDB connected");
