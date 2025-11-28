@@ -1,3 +1,27 @@
-.vercel
-.env*.local
+# --- Dependencies and Build Artifacts ---
+/node_modules
+/server/node_modules
+/client/build
+/client/dist
+/client/.vite # Vite build artifacts, if applicable
+
+# --- Vercel Specific ---
+# Ignores the local Vercel configuration directory
+.vercel/
+
+# --- Environment Variables ---
+# Ignores the .env file specifically within the /server directory
 /server/.env
+
+# Ignores all .env files in the root and any file starting with .env followed by any characters
+# This covers: .env, .env.development, .env.production, etc.
+.env
+.env.*
+
+# Ignores .env files in any subdirectory (Optional, but safer)
+**/.env
+**/.env.*
+
+# --- Log and Temp Files ---
+*.log
+npm-debug.log*
